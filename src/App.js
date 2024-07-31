@@ -1,6 +1,6 @@
 import './App.css';
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import Card from "@mui/material/Card";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+// import Card from "@mui/material/Card";
 import TestPage from './TestPage';
 import SecondTestPage from './SecondTestPage';
 import Home from './Home';
