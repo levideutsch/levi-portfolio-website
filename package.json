@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "build": "ESLINT_CONFIG_FILE=.eslintrc.netlify.js react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "update-deps": "npx npm-check-updates -u && npm install"

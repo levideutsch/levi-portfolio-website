@@ -1,12 +1,5 @@
-// module.exports = {
-//   rules: {
-//     'no-unused-vars': process.env.CI ? 'warn' : 'error',
-//   },
-// };
-// comment
-
 module.exports = {
-  rules: {
-    'no-unused-vars': ['warn']
-  },
-};
+    rules: {
+      'no-unused-vars': process.env.ESLINT_NO_UNUSED_VARS || 'error',
+    },
+  };
