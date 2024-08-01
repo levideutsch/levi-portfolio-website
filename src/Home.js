@@ -8,6 +8,8 @@ function Home() {
             <Link to="/test-page">Go To Test</Link>
             <br />
             <Link to="/second-test-page">Go To Second Test</Link>
+            <br />
+            this is me adding new data to home page 
         </div>
     )
 }
