@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter, } from "react-router-dom";
 import TestPage from './TestPage';
 import SecondTestPage from './SecondTestPage';
 import Home from './Home';
+import SingleProject from './SingleProject';
 // comment
 // comment 2
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
       <Routes>
       <Route exact path='/' element={<Home />}/>
+      <Route path='/project/:projectId' element={<SingleProject />}/>
         <Route path='/test-page' element={<TestPage />}/>
         <Route path='/second-test-page' element={<SecondTestPage />}/>
       </Routes>

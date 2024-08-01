@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto-mono": "^5.0.18",
     "@mui/material": "^5.16.6",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@testing-library/jest-dom": "^6.4.8",
@@ -12,6 +13,7 @@
     "@testing-library/user-event": "^14.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "^5.0.1",
     "styled-components": "^6.1.12",
@@ -30,7 +32,9 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-unused-vars": ["warn"]
+      "no-unused-vars": [
+        "warn"
+      ]
     }
   },
   "browserslist": {
@@ -47,6 +51,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "npm-check-updates": "^17.0.0"  
+    "npm-check-updates": "^17.0.0"
   }
 }
