@@ -2,9 +2,9 @@
 just testing adding text
 adding more text in seperate branch
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+![image](readme_photos/onePhoto.png)
 ## Available Scripts
-![image](src/onePhoto.png)
+
 In the project directory, you can run:
 
 ### `npm start`
