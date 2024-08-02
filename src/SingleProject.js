@@ -1,10 +1,13 @@
+// REACT IMPORTS
 import React, { useContext, useState } from "react";
 import { DataContext } from "./context/Data";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+// MUI IMPORTS
 import { Card, Typography, Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "@fontsource/roboto-mono"; // Import the font
-import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -12,28 +15,16 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FaReact } from "react-icons/fa"; // Import icons
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 
-// Photos
-// import siAdjustCaseQuantity from './photos-for-portfolio/siAdjustCaseQuantity.jpeg';
-import siHomePageWithSideBar from "./photos-for-portfolio/siHomePageWithSideBar.jpeg";
-import siXlFormat from "./photos-for-portfolio/siXlFormat.jpeg";
-import siSingleProductpage from "./photos-for-portfolio/siSingleProductpage.jpeg";
-import siAdjustCaseQuantity from "./photos-for-portfolio/siAdjustCaseQuantity.jpeg";
-import siViewLogs from "./photos-for-portfolio/siViewLogs.jpeg";
-import siSingleProductExpandPurchaseOrders from "./photos-for-portfolio/siSingleProductExpandPurchaseOrders.jpeg";
-import siPurchaseOrderHistory from "./photos-for-portfolio/siPurchaseOrderHistory.jpeg";
-import siSinglePurchaseOrder from "./photos-for-portfolio/siSinglePurchaseOrder.jpeg";
-import siCurrentInvoicesPage from "./photos-for-portfolio/siCurrentInvoicesPage.jpeg";
-import siSingleInvoicePage from "./photos-for-portfolio/siSingleInvoicePage.jpeg";
-import siAnalyticsPage from "./photos-for-portfolio/siAnalyticsPage.jpeg";
-import siInventoryState from "./photos-for-portfolio/siInventoryState.jpeg";
-import siProductSearch from "./photos-for-portfolio/siProductSearch.jpeg";
+
 
 function SingleProject() {
   const [showDetailedOverview, setShowDetailedOverview] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
-  const { projectId } = useParams(); // Retrieve the 'id' parameter from the URL
+  const { projectId } = useParams(); 
   const { projects } = useContext(DataContext);
   const navigate = useNavigate();
+
+
   const theme = createTheme({
     typography: {
       fontFamily: "Roboto Mono, monospace",
@@ -47,6 +38,7 @@ function SingleProject() {
     padding: "20px",
   };
 
+  
   const findProject = projects.find((p) => p?.id === parseInt(projectId));
   const youTubeLink = findProject.links?.find((link) => link.youTube)?.youTube;
   const gitHubLink = findProject.links?.find((link) => link.gitHub)?.gitHub;
@@ -206,7 +198,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siHomePageWithSideBar}
+            src="https://i.imgur.com/5br0o6N.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -239,7 +231,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siXlFormat}
+            src="https://i.imgur.com/Iu1HTGC.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -272,7 +264,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siSingleProductpage}
+            src="https://i.imgur.com/Jlf8rlw.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -305,7 +297,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siAdjustCaseQuantity}
+            src="https://i.imgur.com/mVCIMYJ.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -338,7 +330,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siViewLogs}
+            src="https://i.imgur.com/MhraHDC.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -371,7 +363,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siSingleProductExpandPurchaseOrders}
+            src="https://i.imgur.com/uowMQuB.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -404,7 +396,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siPurchaseOrderHistory}
+            src="https://i.imgur.com/yXrJwQi.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -437,7 +429,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siSinglePurchaseOrder}
+            src="https://i.imgur.com/cS5bIxX.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -470,7 +462,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siCurrentInvoicesPage}
+            src="https://i.imgur.com/Gj2I82k.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -503,7 +495,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siSingleInvoicePage}
+            src="https://i.imgur.com/cjkLlkh.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -536,7 +528,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siAnalyticsPage}
+            src="https://i.imgur.com/50ufd26.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -569,7 +561,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siInventoryState}
+            src="https://i.imgur.com/C7GfLqS.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -602,7 +594,7 @@ function SingleProject() {
           }}
         >
           <img
-            src={siProductSearch}
+            src="https://i.imgur.com/6lA2CHt.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -621,6 +613,7 @@ function SingleProject() {
             Find Product By Name
           </Typography>
         </Card>
+        
       </Box>
     </ThemeProvider>
   );
