@@ -1,4 +1,4 @@
-import { Card } from "@mui/material";
+import { Card, Tooltip } from "@mui/material";
 import "@fontsource/roboto-mono"; // Import the font
 import {
   FaReact,
@@ -10,28 +10,59 @@ import {
 import { DiRuby } from "react-icons/di";
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 
-function Skills() {
-    return (
-
-        <Card
-          style={{
-            width: "45%",
-            height: "130%",
-            margin: "0 auto",
-            marginTop: "20px",
-          }}
-        >
-          {" "}
+function Skills({ isMobile }) {
+  return (
+    <Card
+      style={{
+        width: isMobile ? "100%" : "45%",
+        height: "130%",
+        margin: "0 auto",
+        marginTop: "20px",
+      }}
+    >
+      {" "}
+      <Tooltip title="JavaScript" arrow>
+        <span>
           <FaJsSquare size="40" style={{ margin: "0 10px" }} />
-          <FaReact size="40" style={{ margin: "0 10px" }} />
-          <DiRuby size="40" style={{ margin: "0 10px" }} />
-          <SiRubyonrails size="40" style={{ margin: "0 10px" }} />
-          <FaPython size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="HTML" arrow>
+        <span>
           <FaHtml5 size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="React" arrow>
+        <span>
+          <FaReact size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="Ruby" arrow>
+        <span>
+          <DiRuby size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="Rails" arrow>
+        <span>
+          <SiRubyonrails size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="Python/Flask" arrow>
+        <span>
+          <FaPython size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="PostgreSQL" arrow>
+        <span>
           <SiPostgresql size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="Git/GitHub" arrow>
+        <span>
           <FaGithub size="40" style={{ margin: "0 10px" }} />
-        </Card>
-
-    )
+        </span>
+      </Tooltip>
+    </Card>
+  );
 }
-export default Skills
+
+export default Skills;

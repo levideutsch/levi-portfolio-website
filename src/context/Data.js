@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "@fontsource/roboto-mono"; // Import the font
 import {
   FaReact,
+  FaJsSquare,
 
 } from "react-icons/fa"; // Import icons
 
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
+
+
 
 const DataContext = React.createContext();
 
@@ -29,6 +32,12 @@ function DataProvider({ children }) {
               title: 'My Wishlist',
               imageUrl: 'https://github.com/levideutsch/my-wishlist/raw/main/Products-by-category.png', // Replace with actual image URLs
               languages: [<FaReact/>, <SiRubyonrails />, <SiPostgresql />]
+            },
+            {
+                id: 4,
+                title: "Not Airbnb",
+                imageUrl: "https://github.com/levideutsch/react-phase-2-project/raw/main/img1.png",
+                languages: [<FaJsSquare />]
             }
           ]
     )
