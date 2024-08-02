@@ -9,10 +9,13 @@ import {
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 
 
+import smartInventoryImages from "../photos-for-portfolio/HandlePhotos";
+
 
 const DataContext = React.createContext();
 
 function DataProvider({ children }) {
+
     const [projects, setProjects] = useState(
         [
             {
@@ -21,7 +24,8 @@ function DataProvider({ children }) {
               imageUrl: 'https://www.netsuite.com/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg', // Replace with actual image URLs
               languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="40" style={{ margin: "0 10px" }}/>],
               description: "Smart Inventory is a comprehensive inventory tracking system designed for a wholesale cleaning products company. It enables the business owner to monitor warehouse stock levels, manage incoming purchase orders, and track sales invoices. Key features include PDF and photo uploads and email notifications to streamline inventory management and communication.",
-              links: [{gitHub: "Private"}, {youTube: "Not Yet Created"}]
+              links: [{gitHub: "Private"}, {youTube: "Not Yet Created"}],
+              images: [smartInventoryImages],
 
             },
             {
@@ -30,7 +34,8 @@ function DataProvider({ children }) {
               imageUrl: 'https://github.com/levideutsch/yent-connect/raw/main/readme_photos/home-page-1.png', // Replace with actual image URLs
               languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="40" style={{ margin: "0 10px" }}/>],
               description: "",
-              links: [{gitHub: "https://github.com/levideutsch/yent-connect"}, {youTube: "Not Yet Created"}]
+              links: [{gitHub: "https://github.com/levideutsch/yent-connect"}, {youTube: "Not Yet Created"}],
+              images: [],
             },
             {
               id: 3,
@@ -38,7 +43,8 @@ function DataProvider({ children }) {
               imageUrl: 'https://github.com/levideutsch/my-wishlist/raw/main/Products-by-category.png', // Replace with actual image URLs
               languages: [<FaReact/>, <SiRubyonrails />, <SiPostgresql />],
               description: "",
-              links: [{gitHub:" https://github.com/levideutsch/my-wishlist"}, {youTube: "https://youtu.be/GTwc4jyi44o"}]
+              links: [{gitHub:" https://github.com/levideutsch/my-wishlist"}, {youTube: "https://youtu.be/GTwc4jyi44o"}],
+              images: [],
             },
             {
                 id: 4,
@@ -46,7 +52,8 @@ function DataProvider({ children }) {
                 imageUrl: "https://github.com/levideutsch/react-phase-2-project/raw/main/img1.png",
                 languages: [<FaJsSquare />],
                 description: "",
-                links: [{gitHub: "https://github.com/levideutsch/react-phase-2-project"}, {youTube: "https://youtu.be/IK8A4We1MKc"}]
+                links: [{gitHub: "https://github.com/levideutsch/react-phase-2-project"}, {youTube: "https://youtu.be/IK8A4We1MKc"}],
+                images: [],
             }
           ]
     )

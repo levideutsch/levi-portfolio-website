@@ -34,7 +34,6 @@ const styles = {
 
 
  
-
 function Home() {
     const isMobile = useMediaQuery("(max-width:600px)");
     const bioRef = useRef(null);
