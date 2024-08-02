@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import "@fontsource/roboto-mono"; // Import the font
-import {
-  FaReact,
-  FaJsSquare,
-
-} from "react-icons/fa"; // Import icons
-
+import { FaReact, FaJsSquare } from "react-icons/fa"; // Import icons
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 
-
-import smartInventoryImages from "../photos-for-portfolio/HandlePhotos";
 
 
 const DataContext = React.createContext();
@@ -25,7 +18,7 @@ function DataProvider({ children }) {
               languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="40" style={{ margin: "0 10px" }}/>],
               description: "Smart Inventory is a comprehensive inventory tracking system designed for a wholesale cleaning products company. It enables the business owner to monitor warehouse stock levels, manage incoming purchase orders, and track sales invoices. Key features include PDF and photo uploads and email notifications to streamline inventory management and communication.",
               links: [{gitHub: "Private"}, {youTube: "Not Yet Created"}],
-              images: [smartInventoryImages],
+              images: [],
 
             },
             {
