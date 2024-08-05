@@ -15,7 +15,7 @@ function Portfolio() {
                     <Grid item xs={12} sm={6} md={4}>
                         <Tooltip title="Click To View Full Project" arrow>
                         <Card>
-                            <CardActionArea component={Link} to={`/project/${projects[0].id}`}>
+                            <CardActionArea component={Link} to={"/smart-inventory"}>
                                 <CardMedia
                                     component="img"
                                     height="140"
@@ -39,7 +39,7 @@ function Portfolio() {
                     <Grid item xs={12} sm={6} md={4}>
                     <Tooltip title="Click To View Full Project" arrow>
                         <Card>
-                            <CardActionArea component={Link} to={`/project/${projects[1].id}`}>
+                            <CardActionArea component={Link} to={"/yent-connect"}>
                                 <CardMedia
                                     component="img"
                                     height="140"

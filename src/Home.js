@@ -1,12 +1,13 @@
 // REACT IMPORTS
-import React, { useRef  } from 'react';
+import React, { useRef } from 'react';
+
 
 // COMPONENT IMPORTS
 import Bio from "./Bio";
 import Skills from "./Skills";
 import Portfolio from "./Portfolio";
 import Resume from "./Resume";
-import Contact from "./Contact";
+import ContactMe from './ContactMe';
 import ProfilePhotoPopUp from './ProfilePhotoPopUp';
 
 // MUI IMPORTS
@@ -16,6 +17,7 @@ import "@fontsource/roboto-mono"; // Import the font
 import FloatingNav from "./FloatingNav";
 import useScrollToTop from './UseScrollToTop';
 import useMediaQuery from "@mui/material/useMediaQuery";
+// import { ContactMail } from '@mui/icons-material';
 
 
 
@@ -44,7 +46,7 @@ function Home() {
   
 
     const handleNavClick = (sectionRef) => {
-        if (sectionRef.current) {
+        if (sectionRef.current) {  
           window.scrollTo({
             top: sectionRef.current.offsetTop,
             behavior: 'smooth'
@@ -57,7 +59,7 @@ function Home() {
   return (
     <ThemeProvider theme={theme}>
         <div ref={bioRef}></div>
-         <FloatingNav
+    <FloatingNav
         onNavClick={handleNavClick}
         bioRef={bioRef}
         skillsRef={skillsRef}
@@ -132,13 +134,12 @@ function Home() {
           variant="h5"
           style={{ marginBottom: "-10px", marginTop: "70px" }}
         >
-          Contact
+          Connect With Me
         </Typography>
 
         {/* Contact Component */}
-        <div ref={contactRef}>
-          <Contact />
-        </div>
+        <ContactMe isMobile={isMobile}/>
+        <div ref={contactRef}></div>
        
       </Box>
     </ThemeProvider>

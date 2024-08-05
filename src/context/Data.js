@@ -8,7 +8,6 @@ import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 const DataContext = React.createContext();
 
 function DataProvider({ children }) {
-
     const [projects, setProjects] = useState(
         [
             {
@@ -55,7 +54,7 @@ function DataProvider({ children }) {
     <DataContext.Provider
       value={{
         projects,
-        setProjects
+        setProjects,
       }}
     >
       {children}

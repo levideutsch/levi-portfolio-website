@@ -1,7 +1,6 @@
 // REACT IMPORTS
-import React, { useContext, useState } from "react";
-import { DataContext } from "./context/Data";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+// import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 // MUI IMPORTS
@@ -13,15 +12,15 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { FaReact } from "react-icons/fa"; // Import icons
-import { SiRubyonrails, SiPostgresql } from "react-icons/si";
+import { SiRubyonrails  } from "react-icons/si";
+import { DiSqllite } from "react-icons/di";
 
 
 
-function SingleProject() {
+
+function YentConnectProject() {
   const [showDetailedOverview, setShowDetailedOverview] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
-  const { projectId } = useParams(); 
-  const { projects } = useContext(DataContext);
   const navigate = useNavigate();
 
 
@@ -39,9 +38,6 @@ function SingleProject() {
   };
 
   
-  const findProject = projects.find((p) => p?.id === parseInt(projectId));
-  const youTubeLink = findProject.links?.find((link) => link.youTube)?.youTube;
-  const gitHubLink = findProject.links?.find((link) => link.gitHub)?.gitHub;
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,7 +46,7 @@ function SingleProject() {
           <ArrowBackIosIcon />
         </Button>
 
-        <Typography variant="h4">Smart Inventory</Typography>
+        <Typography variant="h4">Yent Connect</Typography>
         <hr style={{ width: "50%" }} />
         <Typography variant="body2" style={{ marginTop: "40px" }}>
           Description
@@ -65,12 +61,9 @@ function SingleProject() {
           }}
         >
           <Typography variant="body1">
-            Smart Inventory is a comprehensive inventory tracking system
-            designed for a wholesale cleaning products company. It enables the
-            business owner to monitor warehouse stock levels, manage incoming
-            purchase orders, and track sales invoices. Key features include PDF
-            and photo uploads and email notifications to streamline inventory
-            management and communication.
+          I built a social media platform called "Yent-Connect" for fun. It includes features such as users, friends, posts, likes,
+           unlikes, messages, a page with posts from people I follow, and a page with posts from all users on the application. 
+           The platform was built using React, React Router, Ruby on Rails, and SQLite
           </Typography>
         </Card>
         {/* <hr style={{ width: "50%", marginTop: "40px" }} /> */}
@@ -93,22 +86,7 @@ function SingleProject() {
             }}
           >
             <Typography variant="body1">
-              This sophisticated inventory management application, meticulously
-              crafted from scratch, leverages a robust stack of technologies
-              including React, React Router, Rails, and PostgreSQL, with email
-              notifications facilitated by SendGrid and deployment on Heroku.
-              Designed to address the critical issue of inventory visibility,
-              the application empowers business owners to efficiently manage
-              their inventory by generating and tracking purchase orders and
-              invoices. It provides comprehensive analytics, including real-time
-              updates on stock levels, financial metrics, and historical sales
-              data, ensuring precise control over product quantities, financial
-              performance, and profitability. Users can manually adjust product
-              data, generate detailed PDFs, and access a messaging system for
-              seamless communication regarding purchase orders and invoices.
-              This all-in-one solution transforms inventory management into an
-              intuitive and actionable process, tailored to meet the needs of
-              modern businesses.
+
             </Typography>
           </Card>
         )}
@@ -129,7 +107,9 @@ function SingleProject() {
         >
           <FaReact size="40" style={{ margin: "0 10px" }} />
           <SiRubyonrails size="40" style={{ margin: "0 10px" }} />
-          <SiPostgresql size="40" style={{ margin: "0 10px" }} />
+          <DiSqllite size="40" style={{ margin: "0 10px" }} />
+      
+
         </Card>
         {/* <hr style={{ width: "50%", marginTop: "40px" }} /> */}
 
@@ -144,37 +124,11 @@ function SingleProject() {
             marginTop: "20px",
           }}
         >
-          {gitHubLink === "Private" ? (
-            <FaGithub size="40" style={{ margin: "0 10px", color: "black" }} />
-          ) : (
-            <a
-              href={gitHubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <FaGithub
-                size="40"
-                style={{ margin: "0 10px", color: "black" }}
-              />
+            <a href="https://github.com/levideutsch/yent-connect" target="_blank" rel="noopener noreferrer">
+                <FaGithub size="40" style={{ margin: "0 10px", color: "black" }} />
             </a>
-          )}
-
-          {youTubeLink === "Not Yet Created" ? (
             <FaYoutube size="40" style={{ margin: "0 10px", color: "black" }} />
-          ) : (
-            <a
-              href={youTubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <FaYoutube
-                size="40"
-                style={{ margin: "0 10px", color: "black" }}
-              />
-            </a>
-          )}
+    
         </Card>
 
         <hr style={{ width: "50%", marginTop: "40px" }} />
@@ -185,7 +139,7 @@ function SingleProject() {
 
         {/* photos */}
 
-        {/* Home page with side bar */}
+        {/* Welcome Page */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -198,14 +152,14 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/5br0o6N.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/welcome-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
               objectFit: "contain", // Ensures the image fits within the container without stretching
               backgroundColor: "black",
             }}
-            alt="Main Home Page With Side Navigation Bar"
+            alt="Welcome Page"
           />
           <Typography
             style={{
@@ -214,11 +168,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Main Home Page With Side Navigation Bar
+            Welcome Page
           </Typography>
         </Card>
 
-        {/* Home page XL format */}
+        {/* Login page */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -231,7 +185,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/Iu1HTGC.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/login-page-2.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -247,11 +201,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Main Home Page Table View
+            Login Page
           </Typography>
         </Card>
 
-        {/* Single product page*/}
+        {/* Home page*/}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -264,7 +218,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/Jlf8rlw.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/home-page-1.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -280,11 +234,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Single Product Page
+            Home Page
           </Typography>
         </Card>
 
-        {/* Case adjustment page*/}
+        {/* Explore page */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -297,7 +251,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/mVCIMYJ.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/explore-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -313,11 +267,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Manually Adjust Products Inventory State
+            Explore Posts From Users You Do Not Follow
           </Typography>
         </Card>
 
-        {/* Transaction history*/}
+        {/* Likes and comments */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -330,7 +284,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/MhraHDC.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/liking-post.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -346,11 +300,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            View Products Transaction History
+            Likes And Comments
           </Typography>
         </Card>
 
-        {/* Individual product PO & invoices*/}
+        {/* Create posts*/}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -363,7 +317,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/uowMQuB.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/create-post-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -379,11 +333,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            View Products Individual Purchase Orders And Invoices
+            Create Posts
           </Typography>
         </Card>
 
-        {/* Purchase order history */}
+        {/* View profiles */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -396,7 +350,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/yXrJwQi.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/my-profile-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -412,11 +366,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            All Completed Purchase Orders
+            View Profiles
           </Typography>
         </Card>
 
-        {/* Single purchase order */}
+        {/* Explore posts */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -429,7 +383,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/cS5bIxX.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/toggle-posts.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -445,11 +399,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Single Purchase Order
+            Explore Users Posts
           </Typography>
         </Card>
 
-        {/* Current invoices */}
+        {/* Explore users connections */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -462,7 +416,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/Gj2I82k.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/toggle-followers.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -478,11 +432,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            All Current Invoices
+            Explore Users Connections
           </Typography>
         </Card>
 
-        {/* Single invoice */}
+        {/* Settings page */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -495,7 +449,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/cjkLlkh.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/settings-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -511,11 +465,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Single Invoice
+            Settings Page
           </Typography>
         </Card>
 
-        {/* Analytics page */}
+        {/* Click to begin conversation */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -528,7 +482,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/50ufd26.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/message-icon.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -544,11 +498,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Analytics To View All Data Related To All Products
+            Click To Begin Conversation
           </Typography>
         </Card>
 
-        {/* Inventory state */}
+        {/* Confirm conversation */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -561,7 +515,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/C7GfLqS.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/message-popup.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -577,11 +531,11 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            View Inventory State
+            Confirm Conversation
           </Typography>
         </Card>
 
-        {/* Product search */}
+        {/* Chat room */}
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
@@ -594,7 +548,7 @@ function SingleProject() {
           }}
         >
           <img
-            src="https://i.imgur.com/6lA2CHt.png"
+            src="https://github.com/levideutsch/yent-connect/raw/main/readme_photos/chat-page.png"
             style={{
               height: isMobile ? "auto" : "50vh", // Adjust height for mobile
               width: isMobile ? "100%" : "100%",
@@ -610,7 +564,7 @@ function SingleProject() {
               marginBottom: "40px",
             }}
           >
-            Find Product By Name
+            Chat Room
           </Typography>
         </Card>
         
@@ -619,4 +573,4 @@ function SingleProject() {
   );
 }
 
-export default SingleProject;
+export default YentConnectProject
