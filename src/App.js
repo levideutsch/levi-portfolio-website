@@ -4,10 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import TestPage from './TestPage';
 import SecondTestPage from './SecondTestPage';
 import Home from './Home';
-import SmartInventoryProject from './projects/SmartInventoryProject';
-
 import useScrollToTop from './UseScrollToTop';
-import YentConnectProject from './projects/YentConnectProject';
+import HandleProjects from './projects/HandleProjects';
 
 
 function App() {
@@ -24,8 +22,7 @@ function App() {
       {/* <FloatingNav /> */}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/smart-inventory' element={<SmartInventoryProject />} />
-        <Route path='/yent-connect' element={<YentConnectProject />} />
+        <Route path='/project/:id' element={<HandleProjects />} />
         <Route path='/test-page' element={<TestPage />} />
         <Route path='/second-test-page' element={<SecondTestPage />} />
       </Routes>

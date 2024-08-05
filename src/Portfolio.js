@@ -15,7 +15,7 @@ function Portfolio() {
                     <Grid item xs={12} sm={6} md={4}>
                         <Tooltip title="Click To View Full Project" arrow>
                         <Card>
-                            <CardActionArea component={Link} to={"/smart-inventory"}>
+                            <CardActionArea component={Link} to={`/project/${projects[0]?.id}`}>
                                 <CardMedia
                                     component="img"
                                     height="140"
@@ -24,6 +24,7 @@ function Portfolio() {
                                 />
                                 <CardContent>
                                     <Typography variant="h6">{projects[0].title}</Typography>
+                                    <span style={{ fontSize: '10px' }}>{projects[0].shortDescription}</span>
                                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
                                         {projects[0].languages.map((icon, index) => (
                                             <IconButton key={index} color="black">
@@ -39,7 +40,7 @@ function Portfolio() {
                     <Grid item xs={12} sm={6} md={4}>
                     <Tooltip title="Click To View Full Project" arrow>
                         <Card>
-                            <CardActionArea component={Link} to={"/yent-connect"}>
+                            <CardActionArea component={Link} to={`project/${projects[1]?.id}`}>
                                 <CardMedia
                                     component="img"
                                     height="140"
@@ -48,6 +49,7 @@ function Portfolio() {
                                 />
                                 <CardContent>
                                     <Typography variant="h6">{projects[1].title}</Typography>
+                                    <span style={{ fontSize: '10px' }}>{projects[1].shortDescription}</span>
                                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
                                         {projects[1].languages.map((icon, index) => (
                                             <IconButton key={index} color="black">
@@ -76,32 +78,9 @@ function Portfolio() {
                                 />
                                 <CardContent>
                                     <Typography variant="h6">{projects[2].title}</Typography>
+                                    <span style={{ fontSize: '10px' }}>{projects[2].shortDescription}</span>
                                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
                                         {projects[2].languages.map((icon, index) => (
-                                            <IconButton key={index} color="black">
-                                                {icon}
-                                            </IconButton>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        </Tooltip>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                    <Tooltip title="Click To View Full Project" arrow>
-                        <Card>
-                            <CardActionArea component={Link} to={`/project/${projects[3].id}`}>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={projects[3].imageUrl}
-                                    alt={projects[3].title}
-                                />
-                                <CardContent>
-                                    <Typography variant="h6">{projects[3].title}</Typography>
-                                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                                        {projects[3].languages.map((icon, index) => (
                                             <IconButton key={index} color="black">
                                                 {icon}
                                             </IconButton>

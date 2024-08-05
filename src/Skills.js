@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa"; // Import icons
 import { DiRuby } from "react-icons/di";
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
+import { VscJson } from "react-icons/vsc";
 
 function Skills({ isMobile }) {
   return (
@@ -59,6 +60,11 @@ function Skills({ isMobile }) {
       <Tooltip title="Git/GitHub" arrow>
         <span>
           <FaGithub size="40" style={{ margin: "0 10px" }} />
+        </span>
+      </Tooltip>
+      <Tooltip title="Json" arrow>
+        <span>
+          <VscJson size="40" style={{ margin: "0 10px" }} />
         </span>
       </Tooltip>
     </Card>
