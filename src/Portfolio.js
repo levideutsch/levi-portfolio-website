@@ -4,6 +4,7 @@ import { DataContext } from './context/Data';
 import { Card, CardContent, CardMedia, CardActionArea, Grid, IconButton, Typography, Tooltip  } from '@mui/material';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 function Portfolio() {
     const { projects } = useContext(DataContext);
@@ -16,12 +17,18 @@ function Portfolio() {
                         <Tooltip title="Click To View Full Project" arrow>
                         <Card>
                             <CardActionArea component={Link} to={`/project/${projects[0]?.id}`}>
+                                <LazyLoad 
+                                    height={140} 
+                                    offset={100} 
+                                    placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
+                                >
                                 <CardMedia
                                     component="img"
                                     height="140"
                                     image={projects[0].imageUrl}
                                     alt={projects[0].title}
                                 />
+                                </LazyLoad>
                                 <CardContent>
                                     <Typography variant="h6">{projects[0].title}</Typography>
                                     <span style={{ fontSize: '10px' }}>{projects[0].shortDescription}</span>
@@ -41,12 +48,18 @@ function Portfolio() {
                     <Tooltip title="Click To View Full Project" arrow>
                         <Card>
                             <CardActionArea component={Link} to={`project/${projects[1]?.id}`}>
+                                <LazyLoad
+                                     height={140} 
+                                     offset={100} 
+                                     placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
+                                >
                                 <CardMedia
                                     component="img"
                                     height="140"
                                     image={projects[1].imageUrl}
                                     alt={projects[1].title}
                                 />
+                                </LazyLoad>
                                 <CardContent>
                                     <Typography variant="h6">{projects[1].title}</Typography>
                                     <span style={{ fontSize: '10px' }}>{projects[1].shortDescription}</span>
@@ -70,12 +83,18 @@ function Portfolio() {
                     <Tooltip title="Click To View Full Project" arrow>
                         <Card>
                             <CardActionArea component={Link} to={`/project/${projects[2].id}`}>
+                                <LazyLoad
+                                     height={140} 
+                                     offset={100} 
+                                     placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
+                                >
                                 <CardMedia
                                     component="img"
                                     height="140"
                                     image={projects[2].imageUrl}
                                     alt={projects[2].title}
                                 />
+                                </LazyLoad>
                                 <CardContent>
                                     <Typography variant="h6">{projects[2].title}</Typography>
                                     <span style={{ fontSize: '10px' }}>{projects[2].shortDescription}</span>

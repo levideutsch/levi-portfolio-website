@@ -1,14 +1,15 @@
 // REACT IMPORTS
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../context/Data";
+import LazyLoad from 'react-lazyload';
 
 // COMPONENT IMPORTS
 import BackToTop from "../BackToTop";
 
 // MUI IMPORTS
-import { Card, Typography, Box, Tooltip, CircularProgress, } from "@mui/material";
+import { Card, Typography, Box, Tooltip} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "@fontsource/roboto-mono"; // Import the font
 import Button from "@mui/material/Button";
@@ -18,8 +19,6 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 
 function HandleProjects() {
   const [showDetailedOverview, setShowDetailedOverview] = useState(false);
-  const [loading, setLoading] = useState(true);
-  // const [imagesLoaded, setImagesLoaded] = useState([]);
   const isMobile = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
   const { id } = useParams();
@@ -42,26 +41,6 @@ function HandleProjects() {
     (project) => project?.id === parseInt(id)
   );
 
-
-  useEffect(() => {
-    if (currentProject?.images) {
-      setLoading(true);
-      const imageUrls = currentProject.images.map(img => img.url);
-      let loadedImages = 0;
-
-      const onImageLoad = () => {
-        loadedImages += 1;
-        if (loadedImages === imageUrls.length) {
-          setLoading(false);
-        }
-      };
-      imageUrls.forEach((url) => {
-        const img = new Image();
-        img.src = url;
-        img.onload = onImageLoad;
-      });
-    }
-  }, [currentProject]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -202,23 +181,7 @@ function HandleProjects() {
           Photos
         </Typography>
 
-        {loading ? (
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "50vh",
-              backgroundColor: "black",
-              color: "white",
-              borderRadius: "8px",
-              mb: 3
-            }}
-          >
-            <CircularProgress sx={{ color: "white" }} /> <Typography style={{marginLeft: "10px"}}>Loading Photos</Typography> 
-          </Box>
-        ) : (
-          currentProject?.images?.map((image) => (
+         {currentProject?.images?.map((image) => (
             <Card
               key={image?.url}
               sx={{
@@ -236,6 +199,7 @@ function HandleProjects() {
                 border: "3px solid white",
               }}
             >
+              <LazyLoad height={isMobile ? 200 : 400} offset={100} placeholder={<img src={image?.url?.lowResUrl} alt="Loading..." width="100%" height={isMobile ? "auto" : "50vh"} />}>
               <img
                 src={image?.url}
                 style={{
@@ -250,6 +214,7 @@ function HandleProjects() {
                 }}
                 alt={image?.description}
               />
+              </LazyLoad>
               <Typography
                 sx={{
                   backgroundColor:
@@ -272,8 +237,7 @@ function HandleProjects() {
               </Typography>
             </Card>
           ))
-        )}
-
+        }
         <BackToTop />
       </Box>
     </ThemeProvider>
