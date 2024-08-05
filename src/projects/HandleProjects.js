@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../context/Data";
@@ -8,7 +8,7 @@ import { DataContext } from "../context/Data";
 import BackToTop from "../BackToTop";
 
 // MUI IMPORTS
-import { Card, Typography, Box, Tooltip } from "@mui/material";
+import { Card, Typography, Box, Tooltip, CircularProgress, } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "@fontsource/roboto-mono"; // Import the font
 import Button from "@mui/material/Button";
@@ -18,6 +18,8 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 
 function HandleProjects() {
   const [showDetailedOverview, setShowDetailedOverview] = useState(false);
+  const [loading, setLoading] = useState(true);
+  // const [imagesLoaded, setImagesLoaded] = useState([]);
   const isMobile = useMediaQuery("(max-width:600px)");
   const navigate = useNavigate();
   const { id } = useParams();
@@ -39,6 +41,27 @@ function HandleProjects() {
   const currentProject = projects?.find(
     (project) => project?.id === parseInt(id)
   );
+
+
+  useEffect(() => {
+    if (currentProject?.images) {
+      setLoading(true);
+      const imageUrls = currentProject.images.map(img => img.url);
+      let loadedImages = 0;
+
+      const onImageLoad = () => {
+        loadedImages += 1;
+        if (loadedImages === imageUrls.length) {
+          setLoading(false);
+        }
+      };
+      imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = onImageLoad;
+      });
+    }
+  }, [currentProject]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -179,60 +202,77 @@ function HandleProjects() {
           Photos
         </Typography>
 
-        {currentProject?.images?.map((image) => (
-          <Card
-            key={image?.url}
-            style={{
-              width: isMobile ? "100%" : "45%",
-              height: isMobile ? "auto" : "130%",
-              margin: "0 auto",
-              marginTop: "30px",
-              overflow: "hidden",
-              position: "relative",
-              backgroundColor:
-                currentProject?.title === "Not Airbnb" ||
-                currentProject?.title === "Smart Inventory"
-                  ? "white"
-                  : "black",
-              border: "3px solid white",
+        {loading ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "50vh",
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "8px",
+              mb: 3
             }}
           >
-            <img
-              src={image?.url}
-              style={{
-                height: isMobile ? "auto" : "50vh",
-                width: isMobile ? "100%" : "100%",
-                objectFit: "contain",
+            <CircularProgress sx={{ color: "white" }} /> <Typography style={{marginLeft: "10px"}}>Loading Photos</Typography> 
+          </Box>
+        ) : (
+          currentProject?.images?.map((image) => (
+            <Card
+              key={image?.url}
+              sx={{
+                width: isMobile ? "100%" : "45%",
+                height: isMobile ? "auto" : "130%",
+                mx: "auto",
+                mt: 3,
+                overflow: "hidden",
+                position: "relative",
                 backgroundColor:
                   currentProject?.title === "Not Airbnb" ||
                   currentProject?.title === "Smart Inventory"
                     ? "white"
                     : "black",
-              }}
-              alt={image?.description}
-            />
-            <Typography
-              style={{
-                backgroundColor:
-                  currentProject?.title === "Not Airbnb" ||
-                  currentProject?.title === "Smart Inventory"
-                    ? "white"
-                    : "black",
-                color:
-                  currentProject?.title === "Not Airbnb" ||
-                  currentProject?.title === "Smart Inventory"
-                    ? "black"
-                    : "white",
-                position: "absolute",
-                bottom: "2px",
-                width: "100%",
-                textAlign: "center",
+                border: "3px solid white",
               }}
             >
-              {image?.description}
-            </Typography>
-          </Card>
-        ))}
+              <img
+                src={image?.url}
+                style={{
+                  height: isMobile ? "auto" : "50vh",
+                  width: isMobile ? "100%" : "100%",
+                  objectFit: "contain",
+                  backgroundColor:
+                    currentProject?.title === "Not Airbnb" ||
+                    currentProject?.title === "Smart Inventory"
+                      ? "white"
+                      : "black",
+                }}
+                alt={image?.description}
+              />
+              <Typography
+                sx={{
+                  backgroundColor:
+                    currentProject?.title === "Not Airbnb" ||
+                    currentProject?.title === "Smart Inventory"
+                      ? "white"
+                      : "black",
+                  color:
+                    currentProject?.title === "Not Airbnb" ||
+                    currentProject?.title === "Smart Inventory"
+                      ? "black"
+                      : "white",
+                  position: "absolute",
+                  bottom: "2px",
+                  width: "100%",
+                  textAlign: "center",
+                }}
+              >
+                {image?.description}
+              </Typography>
+            </Card>
+          ))
+        )}
 
         <BackToTop />
       </Box>
