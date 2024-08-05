@@ -1,7 +1,6 @@
 // REACT IMPORTS
 import React, { useRef } from 'react';
 
-
 // COMPONENT IMPORTS
 import Bio from "./Bio";
 import Skills from "./Skills";
@@ -114,6 +113,8 @@ function Home() {
         
         <hr style={{ width: "45%", marginTop: "20px" }} />
 
+        <div ref={resumeRef}></div>
+
         <Typography
           variant="h5"
           style={{ marginBottom: "-10px", marginTop: "70px" }}
@@ -122,11 +123,8 @@ function Home() {
         </Typography>
 
         {/* Resume Component */}
-        <Resume ref={resumeRef}/>
-
-        <div ref={resumeRef}>
-          <Resume />
-        </div>
+        <Resume />
+   
 
         <hr style={{ width: "45%", marginTop: "20px" }} />
 
