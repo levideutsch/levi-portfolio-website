@@ -19,6 +19,7 @@
     "react-lazyload": "^3.2.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "^5.0.1",
+    "react-typed": "^2.0.12",
     "styled-components": "^6.1.12",
     "web-vitals": "^4.2.2"
   },

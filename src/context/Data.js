@@ -3,6 +3,8 @@ import "@fontsource/roboto-mono"; // Import the font
 import { FaReact, FaJsSquare } from "react-icons/fa"; // Import icons
 import { VscJson } from "react-icons/vsc";
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
+import { GrHeroku } from "react-icons/gr";
+
 
 
 
@@ -16,7 +18,12 @@ function DataProvider({ children }) {
               title: 'Smart Inventory',
               shortDescription: "An Inventory Tracking System",
               imageUrl: 'https://www.netsuite.com/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg', // Replace with actual image URLs
-              languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="40" style={{ margin: "0 10px" }}/>],
+              languages: [
+                <FaReact size="40" style={{ margin: "0 10px" }}/>,
+                <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>,
+                <SiPostgresql size="40" style={{ margin: "0 10px" }}/>,
+                <GrHeroku size="40" style={{ margin: "0 10px" }}/>
+              ],
               description: `Smart Inventory is a comprehensive inventory tracking system designed for a wholesale cleaning products
                             company. It enables the business owner to monitor warehouse stock levels, manage incoming purchase orders,
                             and track sales invoices. Key features include PDF and photo uploads and email notifications to streamline

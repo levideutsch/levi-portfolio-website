@@ -16,6 +16,7 @@ import "@fontsource/roboto-mono"; // Import the font
 import FloatingNav from "./FloatingNav";
 import useScrollToTop from './UseScrollToTop';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import AskMeStuff from './ask-me-stuff/AskMeStuff';
 // import { ContactMail } from '@mui/icons-material';
 
 
@@ -67,7 +68,7 @@ function Home() {
         contactRef={contactRef}
       />
       <Box style={styles}>
-      
+      <AskMeStuff />
         <Typography variant="h4">Levi Deutsch</Typography>
         <Typography variant='body2'>Full-Stack Developer</Typography>
 
