@@ -12,6 +12,9 @@ import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 import { VscJson } from "react-icons/vsc";
 
 function Skills({ isMobile }) {
+
+
+
   return (
     <Card
       style={{

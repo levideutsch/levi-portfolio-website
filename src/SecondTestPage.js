@@ -10,7 +10,7 @@ function SecondTestPage() {
             adding new data to main branch
             adding MORE new data 
             <button onClick={() => setIsClicked(!isClicked)}>
-                {isClicked ? "close" : "open"}
+                {isClicked ? "Close" : "Open"}
             </button>
 
         </div>

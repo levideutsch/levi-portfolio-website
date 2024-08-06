@@ -7,7 +7,7 @@ function Resume() {
        
         <a href={LeviDeutschTechnicalResume} target="_blank" rel="noopener noreferrer" style={{color: "white"}}>
          
-          <Typography style={{color: "white", marginTop: "10px"}}> View My Resume</Typography>
+          <Typography style={{color: "white", marginTop: "10px"}}>View My Resume</Typography>
         </a>
       </div>
     )

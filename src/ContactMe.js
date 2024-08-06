@@ -3,6 +3,8 @@ import { Card, Tooltip } from "@mui/material";
 import { MdOutlineMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa"; // Import icons
+import { RiArticleFill } from "react-icons/ri";
+
 
 
 
@@ -47,6 +49,11 @@ function ContactMe({isMobile}) {
         <Tooltip title="GitHub" arrow>
           <a href="https://github.com/levideutsch?tab=repositories" target="_blank" rel="noopener noreferrer" style={{ margin: "0 10px" }}>
             <FaGithub size="40" style={{color: "black"}}/>
+          </a>
+        </Tooltip>
+        <Tooltip title="Medium" arrow>
+          <a href="https://medium.com/@leviyitzchokdeutsch" target="_blank" rel="noopener noreferrer" style={{ margin: "0 10px" }}>
+            <RiArticleFill size="40" style={{color: "black"}}/>
           </a>
         </Tooltip>
       </Card>

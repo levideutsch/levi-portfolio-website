@@ -196,7 +196,7 @@ function HandleProjects() {
                   currentProject?.title === "Smart Inventory"
                     ? "white"
                     : "black",
-                border: "3px solid white",
+                border: "1px solid white",
               }}
             >
               <LazyLoad height={isMobile ? 200 : 400} offset={100} placeholder={<img src={image?.url?.lowResUrl} alt="Loading..." width="100%" height={isMobile ? "auto" : "50vh"} />}>

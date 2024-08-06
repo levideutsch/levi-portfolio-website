@@ -126,7 +126,7 @@ function Home() {
         <Resume />
    
 
-        <hr style={{ width: "45%", marginTop: "20px" }} />
+        {/* <hr style={{ width: "45%", marginTop: "20px" }} /> */}
 
         <Typography
           variant="h5"
