@@ -1,72 +1,13 @@
-// // import React, { useEffect, useState } from 'react';
-// import Dialog from '@mui/material/Dialog';
-// import DialogContent from '@mui/material/DialogContent';
-// // import { ReactTyped } from 'react-typed';
-// import Button from "@mui/material/Button";
-
-// function Questions({ clicked, setClicked }) {
-//     // const [startTyping, setStartTyping] = useState(false);
-
-//     // useEffect(() => {
-//     //     if (clicked) {
-//     //         const timer = setTimeout(() => {
-//     //             setStartTyping(true);
-//     //         }, 3000);
-//     //         return () => clearTimeout(timer);
-//     //     } else {
-//     //         setStartTyping(false);
-//     //     }
-//     // }, [clicked]);
-
-//     const questionsAndAnswers = [
-//         {
-//             id: 1,
-//             question: 'What is your name?',
-//             answer: 'My name is Levi Deutsch',
-//         },
-//         {
-//             id: 2,
-//             question: 'How Old Are You?',
-//             answer: 'Im 26 Years Old',
-//         },
-//         {
-//             id: 3,
-//             question: 'Where Are You From?',
-//             answer: 'I Am From Brooklyn NY',
-//         },
-
-//     ];
-
-//     return (
-//         <Dialog open={clicked} onClose={() => setClicked(false)}>
-//             <DialogContent>
-//                 {/* <div>
-//                     <p>{questionsAndAnswers[0].question}</p>
-//                     {startTyping && (
-//                         <ReactTyped strings={[questionsAndAnswers[0].answer]} typeSpeed={50}/>
-//                     )}
-//                 </div> */}
-//                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-//                     {questionsAndAnswers.map(item => (
-//                         <Button key={item.id} onClick={() => alert(item.answer)} style={{color: "black"}}>
-//                             {item.question}
-//                         </Button>
-//                     ))}
-//                 </div>
-//             </DialogContent>
-//         </Dialog>
-//     );
-// }
-
-// export default Questions;
-
-
 import React, { useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import { ReactTyped } from 'react-typed';
 import Button from '@mui/material/Button';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import "@fontsource/roboto-mono"; // Import the font
+import { Typography } from "@mui/material";
+
+
 
 function Questions({ clicked, setClicked }) {
     const [selectedQuestion, setSelectedQuestion] = useState(null);
@@ -162,27 +103,56 @@ function Questions({ clicked, setClicked }) {
         setSelectedQuestion(null);
     };
 
+
+    const cardStyle = {
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        color: "black"
+    };
+    
+    const hoverStyle = {
+        transform: 'scale(1.05)',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    };
+
     return (
         <Dialog open={clicked} onClose={() => setClicked(false)}>
             <DialogContent>
                 {selectedQuestion ? (   
-                    <div>
-                        <p>{selectedQuestion.question}</p>
-                        <ReactTyped strings={[selectedQuestion.answer]} typeSpeed={30}/>
+                    <div style={{fontFamily: "Roboto Mono, monospace", paddingTop: '-35px'  }}>
+                        <p 
+                        style={{
+                            // position: "fixed",
+                            top: 0,
+                            left: 0,
+                            width: '100%', // Ensures the question spans the full width
+                            backgroundColor: "white", // Optional: to make the text readable
+                            padding: "10px",
+                            fontWeight: "bold",
+                            zIndex: 1000 // Ensures the question stays above other content
+                            }}>
+                        {selectedQuestion.question}
+                        </p>
+                        <ReactTyped strings={[selectedQuestion.answer]} typeSpeed={30} style={{ marginTop: '70px' }}/>
                         <Button onClick={handleBackClick} style={{ marginTop: '30px', color: 'black', margin: "0 auto" }}>
                             <ArrowBackIosIcon />
                         </Button>
                     </div>
                 ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+             
+                        <Typography style={{ fontSize: '30px', textAlign: "center" }}>Ask Me Stuff</Typography>
                         {questionsAndAnswers.map((item) => (
                             <Button
+                            style={cardStyle}
                                 key={item.id}
                                 onClick={() => handleQuestionClick(item)}
-                                style={{ color: 'black' }}
+                                onMouseOver={(e) => e.currentTarget.style.transform = hoverStyle.transform}
+                                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}    
+
                             >
                                 {item.question}
                             </Button>
+
                         ))}
                     </div>
                 )}

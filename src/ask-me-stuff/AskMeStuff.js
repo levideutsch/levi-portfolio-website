@@ -17,9 +17,9 @@ function AskMeStuff() {
             transform: "translateY(-50%)",
             display: "block",
         },
-        mobile: {
-            display: "none",
-        },
+        // mobile: {
+        //     display: "none",
+        // },
     };
 
     const cardStyle = {

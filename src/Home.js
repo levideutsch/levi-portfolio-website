@@ -68,7 +68,7 @@ function Home() {
         contactRef={contactRef}
       />
       <Box style={styles}>
-      <AskMeStuff />
+      {!isMobile && <AskMeStuff />}
         <Typography variant="h4">Levi Deutsch</Typography>
         <Typography variant='body2'>Full-Stack Developer</Typography>
 
@@ -86,6 +86,7 @@ function Home() {
         <Bio isMobile={isMobile}/>
        
         <hr style={{ width: "45%", marginTop: "20px" }} />
+        {isMobile ? <AskMeStuff /> : null}
         
         <Typography
           variant="h5"
