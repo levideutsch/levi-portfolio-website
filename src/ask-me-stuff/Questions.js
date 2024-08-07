@@ -133,9 +133,11 @@ function Questions({ clicked, setClicked }) {
                         {selectedQuestion.question}
                         </p>
                         <ReactTyped strings={[selectedQuestion.answer]} typeSpeed={30} style={{ marginTop: '70px' }}/>
+                        <div style={{buttom: 0, textAlign: "center", width: "100%", padding: "10px", }}>
                         <Button onClick={handleBackClick} style={{ marginTop: '30px', color: 'black', margin: "0 auto" }}>
-                            <ArrowBackIosIcon />
+                            <ArrowBackIosIcon fontSize='small'/>
                         </Button>
+                        </div>
                     </div>
                 ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

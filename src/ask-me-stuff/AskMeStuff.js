@@ -1,8 +1,14 @@
-import { FaQuestionCircle } from "react-icons/fa";
+// import { FaQuestionCircle } from "react-icons/fa";
 import Button from "@mui/material/Button";
 import { Tooltip } from '@mui/material';
 import { useState, useEffect } from "react";
 import Questions from "./Questions";
+// import { FaLightbulb } from "react-icons/fa";
+import { FaComments } from "react-icons/fa";
+import { Typography } from "@mui/material";
+
+
+
 
 function AskMeStuff() {
     const [clicked, setClicked] = useState(false);
@@ -11,7 +17,7 @@ function AskMeStuff() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setWiggle(true);
-            setTimeout(() => setWiggle(false), 6000); 
+            setTimeout(() => setWiggle(false), 4000); 
         }, 1000); 
 
         return () => clearTimeout(timer); 
@@ -72,11 +78,15 @@ function AskMeStuff() {
                         onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} 
                         onClick={() => setClicked(true)}
                     >
-                        <FaQuestionCircle 
+                        <FaComments
                             size="40" 
                             style={styles.icon}
                         />
+                       
                     </Button>
+                    <br />
+                    <Typography style={{fontSize: "10px"}}>Click Here</Typography>
+                    
                 </Tooltip>
                 <Questions clicked={clicked} setClicked={setClicked}/>
             </div>
