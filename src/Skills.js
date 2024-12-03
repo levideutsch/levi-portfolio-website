@@ -52,7 +52,7 @@ function Skills({ isMobile }) {
           <SiRubyonrails size="40" style={{ margin: "0 10px" }} />
         </span>
       </Tooltip>
-      <Tooltip title="Python/Flask" arrow>
+      <Tooltip title="Python/Django/Flask" arrow>
         <span>
           <FaPython size="40" style={{ margin: "0 10px" }} />
         </span>

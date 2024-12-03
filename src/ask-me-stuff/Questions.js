@@ -93,6 +93,15 @@ function Questions({ clicked, setClicked }) {
              I believe in treating everyone with respect, regardless of their background, which helps in handling criticism 
              constructively.`
         },
+        {
+            id: 10,
+            question: "How can I contact you?",
+            answer: `
+                Email: Levideutsch@live.com
+                <br />
+                LinkedIn: <a href="https://www.linkedin.com/in/levi-deutsch/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/levi-deutsch/</a>
+            `
+        },
     ];
 
     const handleQuestionClick = (question) => {

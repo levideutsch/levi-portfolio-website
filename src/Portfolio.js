@@ -1,146 +1,117 @@
-
 import React from 'react';
 import { DataContext } from './context/Data';
-import { Card, CardContent, CardMedia, CardActionArea, Grid, IconButton, Typography, Tooltip  } from '@mui/material';
+import {
+    Card,
+    CardContent,
+    CardMedia,
+    CardActionArea,
+    IconButton,
+    Typography,
+    Tooltip,
+    useMediaQuery,
+    useTheme
+} from '@mui/material';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
 function Portfolio() {
     const { projects } = useContext(DataContext);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center', 
+        padding: '20px'
+    };
+
+    const rowStyle = {
+        display: isMobile ? 'flex' : 'flex', 
+        flexDirection: isMobile ? 'column' : 'row', 
+        justifyContent: 'center', 
+        gap: '15px', 
+        marginBottom: isMobile ? 10 : '15px', 
+    };
 
 
     const cardStyle = {
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        width: isMobile ? '100%' : '300px', 
+        height: '400px', 
     };
-    
+
     const hoverStyle = {
         transform: 'scale(1.05)',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
     };
 
-    return (
-        <div style={{ padding: '20px' }}>
-            <Grid container spacing={3}>
-                <Grid container item spacing={3} justifyContent="center">
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Tooltip title="Click To View Full Project" arrow>
-                        <Card
-                            style={cardStyle}
-                            onMouseOver={(e) => e.currentTarget.style.transform = hoverStyle.transform}
-                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}    
-                        >
-                            <CardActionArea component={Link} to={`/project/${projects[0]?.id}`}>
-                                <LazyLoad 
-                                    height={140} 
-                                    offset={100} 
-                                    placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
-                                >
-                                <CardMedia
-                                    component="img"
-                                    height="220"
-                                    image={projects[0].imageUrl}
-                                    alt={projects[0].title}
-                                />
-                                </LazyLoad>
-                                <CardContent>
-                                    <Typography variant="h6">{projects[0].title}</Typography>
-                                    <span style={{ fontSize: '10px' }}>{projects[0].shortDescription}</span>
-                                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                                        {projects[0].languages.map((icon, index) => (
-                                            <IconButton key={index} color="black">
-                                                {icon}
-                                            </IconButton>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        </Tooltip>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                    <Tooltip title="Click To View Full Project" arrow>
-                        <Card
-                           style={cardStyle}
-                           onMouseOver={(e) => e.currentTarget.style.transform = hoverStyle.transform}
-                           onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}   
-                        >
-                            <CardActionArea component={Link} to={`project/${projects[1]?.id}`}>
-                                <LazyLoad
-                                     height={140} 
-                                     offset={100} 
-                                     placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
-                                >
-                                <CardMedia
-                                    component="img"
-                                    height="220"
-                                    image={projects[1].imageUrl}
-                                    alt={projects[1].title}
-                                />
-                                </LazyLoad>
-                                <CardContent>
-                                    <Typography variant="h6">{projects[1].title}</Typography>
-                                    <span style={{ fontSize: '10px' }}>{projects[1].shortDescription}</span>
-                                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                                        {projects[1].languages.map((icon, index) => (
-                                            <IconButton key={index} color="black">
-                                                {icon}
-                                            </IconButton>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        </Tooltip>
-                    </Grid>
-                </Grid>
+   
+    const groupedProjects = projects.reduce((acc, project, index) => {
+        if (index % 2 === 0) {
+            acc.push([project]);
+        } else {
+            acc[acc.length - 1].push(project);
+        }
+        return acc;
+    }, []);
 
-                {/* New row for the bottom cards */}
-                <Grid container item spacing={3} justifyContent="center">
-                    <Grid item xs={12} sm={6} md={4}>
-                    <Tooltip title="Click To View Full Project" arrow>
-                        <Card
-                           style={cardStyle}
-                           onMouseOver={(e) => e.currentTarget.style.transform = hoverStyle.transform}
-                           onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}   
-                        >
-                            <CardActionArea component={Link} to={`/project/${projects[2].id}`}>
-                                <LazyLoad
-                                     height={140} 
-                                     offset={100} 
-                                     placeholder={<div style={{ height: '140px', backgroundColor: '#e0e0e0' }} />}
+    return (
+        <div style={containerStyle}>
+            {groupedProjects.map((row, rowIndex) => (
+                <div key={rowIndex} style={rowStyle}>
+                    {row.map((project) => (
+                        <div key={project.id}>
+                            <Tooltip title="Click To View Full Project" arrow>
+                                <Card
+                                    style={cardStyle}
+                                    onMouseOver={(e) => {
+                                        e.currentTarget.style.transform = hoverStyle.transform;
+                                        e.currentTarget.style.boxShadow = hoverStyle.boxShadow;
+                                    }}
+                                    onMouseOut={(e) => {
+                                        e.currentTarget.style.transform = 'scale(1)';
+                                        e.currentTarget.style.boxShadow = 'none';
+                                    }}
                                 >
-                                <CardMedia
-                                    component="img"
-                                    height="220"
-                                    image={projects[2]?.imageUrl}
-                                    alt={projects[2]?.title}
-                                />
-                                </LazyLoad>
-                                <CardContent>
-                                    <Typography variant="h6">{projects[2]?.title}</Typography>
-                                    <span style={{ fontSize: '10px' }}>{projects[2].shortDescription}</span>
-                                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                                        {projects[2].languages.map((icon, index) => (
-                                            <IconButton key={index} color="black">
-                                                {icon}
-                                            </IconButton>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        </Tooltip>
-                    </Grid>
-                </Grid>
-            </Grid>
+                                    <CardActionArea component={Link} to={`/project/${project.id}`}>
+                                        <LazyLoad
+                                            height={220}
+                                            offset={100}
+                                            placeholder={<div style={{ height: '220px', backgroundColor: '#e0e0e0' }} />}
+                                        >
+                                            <CardMedia
+                                                component="img"
+                                                height="220"
+                                                image={project.imageUrl}
+                                                alt={project.title}
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        </LazyLoad>
+                                        <CardContent style={{ height: '130px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+                                            <Typography variant="h6">{project.title}</Typography>
+                                            <Typography variant="body2" color="textSecondary">
+                                                {project.shortDescription}
+                                            </Typography>
+                                            <div style={{ display: "flex", justifyContent: "center", marginTop: "auto", marginBottom: "5px" }}>
+                                                {project.languages.map((icon, idx) => (
+                                                    <IconButton key={idx} color="black" size="small">
+                                                        {icon}
+                                                    </IconButton>
+                                                ))}
+                                            </div>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Tooltip>
+                        </div>
+                    ))}
+                </div>
+            ))}
         </div>
     );
 }
 
 export default Portfolio;
-
-
-
-
-

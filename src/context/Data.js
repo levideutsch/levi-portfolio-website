@@ -4,6 +4,10 @@ import { FaReact, FaJsSquare } from "react-icons/fa"; // Import icons
 import { VscJson } from "react-icons/vsc";
 import { SiRubyonrails, SiPostgresql } from "react-icons/si";
 import { GrHeroku } from "react-icons/gr";
+import { FaPython } from "react-icons/fa";
+import { DiDjango } from "react-icons/di";
+
+
 
 
 
@@ -19,10 +23,10 @@ function DataProvider({ children }) {
               shortDescription: "An Inventory Tracking System",
               imageUrl: 'https://www.netsuite.com/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg', // Replace with actual image URLs
               languages: [
-                <FaReact size="40" style={{ margin: "0 10px" }}/>,
-                <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>,
-                <SiPostgresql size="40" style={{ margin: "0 10px" }}/>,
-                <GrHeroku size="40" style={{ margin: "0 10px" }}/>
+                <FaReact size="25" style={{ margin: "0 10px" }}/>,
+                <SiRubyonrails size="25" style={{ margin: "0 10px" }}/>,
+                <SiPostgresql size="25" style={{ margin: "0 10px" }}/>,
+                <GrHeroku size="25" style={{ margin: "0 10px" }}/>
               ],
               description: `Smart Inventory is a comprehensive inventory tracking system designed for a wholesale cleaning products
                             company. It enables the business owner to monitor warehouse stock levels, manage incoming purchase orders,
@@ -106,7 +110,7 @@ function DataProvider({ children }) {
               title: 'Yent-Connect',
               shortDescription: "A Social Media Platform",
               imageUrl: 'https://github.com/levideutsch/yent-connect/raw/main/readme_photos/home-page-1.png', // Replace with actual image URLs
-              languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="40" style={{ margin: "0 10px" }}/>],
+              languages: [<FaReact size="25" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="25" style={{ margin: "0 10px" }}/>, <SiPostgresql size="25" style={{ margin: "0 10px" }}/>],
               description: ` I built a social media platform called "Yent-Connect" for fun. It includes features such as users, friends, posts, likes,
                              unlikes, messages, a page with posts from people I follow, and a page with posts from all users on the application. 
                              The platform was built using React, React Router, Ruby on Rails, and SQLite`,
@@ -175,7 +179,7 @@ function DataProvider({ children }) {
                 title: "Not Airbnb",
                 shortDescription: "A Property Listing Management Tool",
                 imageUrl: "https://github.com/levideutsch/react-phase-2-project/raw/main/img1.png",
-                languages: [<FaJsSquare  size="40" style={{ margin: "0 10px" }} />, <VscJson size="40" style={{ margin: "0 10px" }} />],
+                languages: [<FaJsSquare  size="25" style={{ margin: "0 10px" }} />, <VscJson size="25" style={{ margin: "0 10px" }} />],
                 description: `Just a few months into my tech career, I was tasked with building a project for school using React and JSON Server.
                               I decided to create a backend version for owners of Airbnb properties to list their homes. Using React and JSON Server,
                               the project allows users to display their properties, set some as listed and others as unlisted. Additionally, 
@@ -200,6 +204,87 @@ function DataProvider({ children }) {
                     description: "De-Listed Page",
                   },
                 ],
+            },
+            {
+              id: 4,
+              title: "News App",
+              shortDescription: "A Platform For Writers To Publish Articles And Connect With Readers",
+              imageUrl: "https://i.imgur.com/xHtY1jF.png",
+              languages: [<FaPython  size="25" style={{ margin: "0 10px" }} />, <DiDjango size="25" style={{ margin: "0 10px" }} />, <FaReact size="25" style={{ margin: "0 10px" }} />],
+              description: `A dynamic news platform that allows users to read, comment, and connect with writers.
+                            Writers can create, edit, and manage their own articles with images, while admins have
+                            full control over writer approvals and a custom-built admin dashboard. The app also features
+                            user profiles for seamless interaction and networking. Built with React and Django Rest Framework,
+                            this app showcases my journey from zero knowledge of Django to developing a fully functional backend, 
+                            including integrating Django’s email service. Future updates will introduce advanced algorithms to deliver
+                            personalized content for readers.`,
+              detailedOverview: null,
+              links:  [
+                {gitHub: "https://github.com/levideutsch/news-app"},
+                {youTube: "Not Yet Created"}
+              ],
+              images: [
+                {
+                  url: "https://i.imgur.com/xHtY1jF.png", 
+                  description: "Home Page",
+                },
+                {
+                  url: "https://i.imgur.com/aspKmOz.png", 
+                  description: "Single Tag/ Category",
+                },
+                {
+                  url: "https://i.imgur.com/5Honaqa.png", 
+                  description: "Single Article",
+                },
+                {
+                  url: "https://i.imgur.com/8FPu6Jw.png", 
+                  description: "Single Article Bottom View",
+                },
+                {
+                  url: "https://i.imgur.com/a7tNKDT.png", 
+                  description: "Article's Comments",
+                },
+                {
+                  url: "https://i.imgur.com/NhEwIUR.png", 
+                  description: "Private Profile/ Settings",
+                },
+                {
+                  url: "https://i.imgur.com/I4FvF1h.png", 
+                  description: "Writer Request Status",
+                },
+                {
+                  url: "https://i.imgur.com/RxTmYZr.png", 
+                  description: "Bottom Nav",
+                },
+                {
+                  url: "https://i.imgur.com/es0Ik2B.png", 
+                  description: "Admin Dashboard",
+                },
+                {
+                  url: "https://i.imgur.com/HjJ8Si6.png", 
+                  description: "Writer Requests (Admin's End)",
+                },
+                {
+                  url: "https://i.imgur.com/0g6mACq.png", 
+                  description: "Writer Mode",
+                },
+                {
+                  url: "https://i.imgur.com/COpxNwW.png", 
+                  description: "Writer Mode Bottom",
+                },
+                {
+                  url: "https://i.imgur.com/MI9PHLX.png", 
+                  description: "Writer's Published Articles",
+                },
+                {
+                  url: "https://i.imgur.com/8G4jh3L.png", 
+                  description: "Public Profile",
+                },
+                {
+                  url: "https://i.imgur.com/cxPIk8a.png", 
+                  description: "Register",
+                },
+              ]
             }
         ]
     )
