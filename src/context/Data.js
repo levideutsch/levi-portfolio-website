@@ -23,10 +23,10 @@ function DataProvider({ children }) {
               shortDescription: "An Inventory Tracking System",
               imageUrl: 'https://www.netsuite.com/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg', // Replace with actual image URLs
               languages: [
-                <FaReact size="25" style={{ margin: "0 10px" }}/>,
-                <SiRubyonrails size="25" style={{ margin: "0 10px" }}/>,
-                <SiPostgresql size="25" style={{ margin: "0 10px" }}/>,
-                <GrHeroku size="25" style={{ margin: "0 10px" }}/>
+                <FaReact size="40" style={{ margin: "0 10px" }}/>,
+                <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>,
+                <SiPostgresql size="37" style={{ margin: "0 10px" }}/>,
+                <GrHeroku size="37" style={{ margin: "0 10px" }}/>
               ],
               description: `Smart Inventory is a comprehensive inventory tracking system designed for a wholesale cleaning products
                             company. It enables the business owner to monitor warehouse stock levels, manage incoming purchase orders,
@@ -51,55 +51,55 @@ function DataProvider({ children }) {
               links: [{gitHub: "Private"}, {youTube: "Not Yet Created"}],
               images: [
                 {
-                  url: "https://i.imgur.com/5br0o6N.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siHomePageWithSideBar_gf3do2.png",
                   description: "Main Home Page With Side Navigation Bar"
                 },
                 {
-                  url: "https://i.imgur.com/Iu1HTGC.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744493/siXlFormat_eygkrx.png",
                   description: "Main Home Page Table View"
                 },
                 {
-                  url: "https://i.imgur.com/Jlf8rlw.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744494/siSingleProductpage_sz81to.png",
                   description: "Single Product Page"
                 },
                 {
-                  url: "https://i.imgur.com/mVCIMYJ.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744491/siAdjustcaseQuantity_uf382b.png",
                   description: "Manually Adjust Products Inventory State"
                 },
                 {
-                  url: "https://i.imgur.com/MhraHDC.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744493/siViewLogs_cj0sqw.png",
                   description: "View Products Transaction History"
                 },
                 {
-                  url: "https://i.imgur.com/uowMQuB.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siSingleProductExpandPurchaseOrders_l7mjjw.png",
                   description: "View Products Individual Purchase Orders And Invoices"
                 },
                 {
-                  url: "https://i.imgur.com/yXrJwQi.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744495/siPurchaseOrderHistory_v8damr.png",
                   description: "All Completed Purchase Orders"
                 },
                 {
-                  url: "https://i.imgur.com/cS5bIxX.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744494/siSinglePurchaseOrder_ol6ahi.png",
                   description: "Single Purchase Order"
                 },
                 {
-                  url: "https://i.imgur.com/Gj2I82k.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siCurrentInvoicesPage_hngwtz.png",
                   description: "All Current Invoices"
                 },
                 {
-                  url: "https://i.imgur.com/cjkLlkh.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siSingleInvoicePage_gprt6y.png",
                   description: "Single Invoice"
                 },
                 {
-                  url: "https://i.imgur.com/50ufd26.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siAnalyticsPage_wmzvsn.png",
                   description: "Analytics To View All Data Related To All Products"
                 },
                 {
-                  url: "https://i.imgur.com/C7GfLqS.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siInventoryState_oxese7.png",
                   description: "View Inventory State"
                 },
                 {
-                  url: "https://i.imgur.com/6lA2CHt.png",
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737744492/siProductSearch_nuranr.png",
                   description: "Find Product By Name"
                 },
               ],
@@ -107,10 +107,91 @@ function DataProvider({ children }) {
             },
             {
               id: 2,
+              title: "News App",
+              shortDescription: "A Platform For Writers To Publish Articles And Connect With Readers",
+              imageUrl: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746082/Screenshot_2025-01-24_at_2.08.13_PM_nrmwap.png",
+              languages: [<FaPython  size="40" style={{ margin: "0 10px" }} />, <DiDjango size="40" style={{ margin: "0 10px" }} />, <FaReact size="40" style={{ margin: "0 10px" }} />],
+              description: `A dynamic news platform that allows users to read, comment, and connect with writers.
+                            Writers can create, edit, and manage their own articles with images, while admins have
+                            full control over writer approvals and a custom-built admin dashboard. The app also features
+                            user profiles for seamless interaction and networking. Built with React and Django Rest Framework,
+                            this app showcases my journey from zero knowledge of Django to developing a fully functional backend, 
+                            including integrating Django’s email service. Future updates will introduce advanced algorithms to deliver
+                            personalized content for readers.`,
+              detailedOverview: null,
+              links:  [
+                {gitHub: "https://github.com/levideutsch/news-app"},
+                {youTube: "Not Yet Created"}
+              ],
+              images: [
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746082/Screenshot_2025-01-24_at_2.08.13_PM_nrmwap.png", 
+                  description: "Home Page",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748748/Screenshot_2025-01-24_at_2.52.44_PM_ubrgln.png", 
+                  description: "Single Tag/ Category",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.53.16_PM_k7miea.png", 
+                  description: "Single Article",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.53.35_PM_bj4e9o.png", 
+                  description: "Single Article Bottom View",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746082/Screenshot_2025-01-24_at_2.09.54_PM_xhe2mq.png", 
+                  description: "Article's Comments",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746082/Screenshot_2025-01-24_at_2.11.11_PM_p9qkgj.png", 
+                  description: "Private Profile/ Settings",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.55.18_PM_cpbh0x.png", 
+                  description: "Writer Request Status",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.55.48_PM_bmyzqd.png", 
+                  description: "Bottom Nav",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.56.10_PM_sfk3me.png", 
+                  description: "Admin Dashboard",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748747/Screenshot_2025-01-24_at_2.56.29_PM_xbgv7k.png", 
+                  description: "Writer Requests (Admin's End)",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748748/Screenshot_2025-01-24_at_2.57.04_PM_if9dgl.png", 
+                  description: "Writer Mode",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748748/Screenshot_2025-01-24_at_2.57.24_PM_faczuw.png", 
+                  description: "Writer Mode Bottom",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737748748/Screenshot_2025-01-24_at_2.57.42_PM_wppgvu.png", 
+                  description: "Writer's Published Articles",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746083/Screenshot_2025-01-24_at_2.12.13_PM_fm3a6l.png", 
+                  description: "Public Profile",
+                },
+                {
+                  url: "https://res.cloudinary.com/dfc3jd87f/image/upload/v1737746083/Screenshot_2025-01-24_at_2.12.57_PM_xzfdli.png", 
+                  description: "Register",
+                },
+              ]
+            },
+            {
+              id: 3,
               title: 'Yent-Connect',
               shortDescription: "A Social Media Platform",
               imageUrl: 'https://github.com/levideutsch/yent-connect/raw/main/readme_photos/home-page-1.png', // Replace with actual image URLs
-              languages: [<FaReact size="25" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="25" style={{ margin: "0 10px" }}/>, <SiPostgresql size="25" style={{ margin: "0 10px" }}/>],
+              languages: [<FaReact size="40" style={{ margin: "0 10px" }}/>, <SiRubyonrails size="40" style={{ margin: "0 10px" }}/>, <SiPostgresql size="37" style={{ margin: "0 10px" }}/>],
               description: ` I built a social media platform called "Yent-Connect" for fun. It includes features such as users, friends, posts, likes,
                              unlikes, messages, a page with posts from people I follow, and a page with posts from all users on the application. 
                              The platform was built using React, React Router, Ruby on Rails, and SQLite`,
@@ -175,11 +256,11 @@ function DataProvider({ children }) {
               ],
             },
             {
-                id: 3,
+                id: 4,
                 title: "Not Airbnb",
                 shortDescription: "A Property Listing Management Tool",
                 imageUrl: "https://github.com/levideutsch/react-phase-2-project/raw/main/img1.png",
-                languages: [<FaJsSquare  size="25" style={{ margin: "0 10px" }} />, <VscJson size="25" style={{ margin: "0 10px" }} />],
+                languages: [<FaJsSquare  size="40" style={{ margin: "0 10px" }} />, <VscJson size="40" style={{ margin: "0 10px" }} />],
                 description: `Just a few months into my tech career, I was tasked with building a project for school using React and JSON Server.
                               I decided to create a backend version for owners of Airbnb properties to list their homes. Using React and JSON Server,
                               the project allows users to display their properties, set some as listed and others as unlisted. Additionally, 
@@ -205,87 +286,6 @@ function DataProvider({ children }) {
                   },
                 ],
             },
-            {
-              id: 4,
-              title: "News App",
-              shortDescription: "A Platform For Writers To Publish Articles And Connect With Readers",
-              imageUrl: "https://i.imgur.com/xHtY1jF.png",
-              languages: [<FaPython  size="25" style={{ margin: "0 10px" }} />, <DiDjango size="25" style={{ margin: "0 10px" }} />, <FaReact size="25" style={{ margin: "0 10px" }} />],
-              description: `A dynamic news platform that allows users to read, comment, and connect with writers.
-                            Writers can create, edit, and manage their own articles with images, while admins have
-                            full control over writer approvals and a custom-built admin dashboard. The app also features
-                            user profiles for seamless interaction and networking. Built with React and Django Rest Framework,
-                            this app showcases my journey from zero knowledge of Django to developing a fully functional backend, 
-                            including integrating Django’s email service. Future updates will introduce advanced algorithms to deliver
-                            personalized content for readers.`,
-              detailedOverview: null,
-              links:  [
-                {gitHub: "https://github.com/levideutsch/news-app"},
-                {youTube: "Not Yet Created"}
-              ],
-              images: [
-                {
-                  url: "https://i.imgur.com/xHtY1jF.png", 
-                  description: "Home Page",
-                },
-                {
-                  url: "https://i.imgur.com/aspKmOz.png", 
-                  description: "Single Tag/ Category",
-                },
-                {
-                  url: "https://i.imgur.com/5Honaqa.png", 
-                  description: "Single Article",
-                },
-                {
-                  url: "https://i.imgur.com/8FPu6Jw.png", 
-                  description: "Single Article Bottom View",
-                },
-                {
-                  url: "https://i.imgur.com/a7tNKDT.png", 
-                  description: "Article's Comments",
-                },
-                {
-                  url: "https://i.imgur.com/NhEwIUR.png", 
-                  description: "Private Profile/ Settings",
-                },
-                {
-                  url: "https://i.imgur.com/I4FvF1h.png", 
-                  description: "Writer Request Status",
-                },
-                {
-                  url: "https://i.imgur.com/RxTmYZr.png", 
-                  description: "Bottom Nav",
-                },
-                {
-                  url: "https://i.imgur.com/es0Ik2B.png", 
-                  description: "Admin Dashboard",
-                },
-                {
-                  url: "https://i.imgur.com/HjJ8Si6.png", 
-                  description: "Writer Requests (Admin's End)",
-                },
-                {
-                  url: "https://i.imgur.com/0g6mACq.png", 
-                  description: "Writer Mode",
-                },
-                {
-                  url: "https://i.imgur.com/COpxNwW.png", 
-                  description: "Writer Mode Bottom",
-                },
-                {
-                  url: "https://i.imgur.com/MI9PHLX.png", 
-                  description: "Writer's Published Articles",
-                },
-                {
-                  url: "https://i.imgur.com/8G4jh3L.png", 
-                  description: "Public Profile",
-                },
-                {
-                  url: "https://i.imgur.com/cxPIk8a.png", 
-                  description: "Register",
-                },
-              ]
-            }
         ]
     )
 

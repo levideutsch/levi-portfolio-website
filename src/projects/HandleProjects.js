@@ -103,7 +103,7 @@ function HandleProjects() {
         <Card
           style={{
             width: isMobile ? "100%" : "45%",
-            height: "130%",
+            height: "auto",
             margin: "0 auto",
             marginTop:
               currentProject?.title === "Yent-Connect" ? "60px" : "20px",

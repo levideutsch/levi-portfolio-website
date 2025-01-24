@@ -75,12 +75,7 @@ function Home() {
   
         <ProfilePhotoPopUp />
         <div ref={skillsRef}></div>
-        <Typography
-          variant="h5"
-          style={{ marginBottom: "-10px", marginTop: "20px" }}
-        >
-          About Me
-        </Typography>
+
 
         {/* Bio Component */}
         <Bio isMobile={isMobile}/>
@@ -103,12 +98,12 @@ function Home() {
 
         <hr style={{ width: "45%", marginTop: "20px" }} />
 
-        <Typography
+        {/* <Typography
           variant="h5"
-          style={{ marginBottom: "-10px", marginTop: "70px" }}
+          style={{ mb: { xs: "-10px", lg: "-10px"}, marginTop: "70px" }}
         >
           Portfolio
-        </Typography>
+        </Typography> */}
 
         {/* Portfolio Component */}
         <Portfolio />
